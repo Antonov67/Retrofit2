@@ -25,7 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
-    private ViewPager viewPager;
+  //  private ViewPager viewPager;
     private JsonPlaceHolderApi jsonPlaceHolderApi;
 
     public static class MyAdapter extends FragmentPagerAdapter{
@@ -65,9 +65,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        viewPager = findViewById(R.id.view_pager);
+        textView = findViewById(R.id.text_view_result);
+    //    viewPager = findViewById(R.id.view_pager);
         MyAdapter adapter = new MyAdapter(getSupportFragmentManager());
-        viewPager.setAdapter(adapter);
+     //   viewPager.setAdapter(adapter);
         Gson gson = new GsonBuilder().serializeNulls().create();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
